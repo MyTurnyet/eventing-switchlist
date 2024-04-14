@@ -1,8 +1,7 @@
 package com.softwareascraft.eventingswitchlist.receivers
 
 import assertk.assertThat
-import assertk.assertions.contains
-import assertk.assertions.isEqualTo
+import assertk.assertions.containsExactlyInAnyOrder
 import assertk.assertions.isTrue
 import com.softwareascraft.eventingswitchlist.logging.FakeLogger
 import com.softwareascraft.eventingswitchlist.wrappers.FakeStopWatch
@@ -22,8 +21,12 @@ class MessageReceiverTests {
         assertThat(fakeStopWatch.stopFunctionCalled).isTrue()
         val receivedMessage = "instance 1 [x] Received '$testMessage'"
         val finishedMessage = "instance 1 [x] Done in 3.0s"
-        assertThat(fakeLogger.currentMessages).contains(receivedMessage)
-        assertThat(fakeLogger.currentMessages).contains(finishedMessage)
+        val doingWorkMessage = "doing work on '$testMessage'"
+        assertThat(fakeLogger.currentMessages).containsExactlyInAnyOrder(
+            receivedMessage,
+            finishedMessage,
+            doingWorkMessage
+        )
     }
 }
 

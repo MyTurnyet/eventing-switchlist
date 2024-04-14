@@ -15,18 +15,19 @@ class MessageReceiver(
     fun receiveMessage(message: String) {
         stopWatch.start()
         logger.printLn("instance ${this.instanceNumber} [x] Received '$message'")
-//        doWork(message)
+       doWork(message)
         stopWatch.stop()
         logger.printLn("instance ${this.instanceNumber} [x] Done in ${stopWatch.totalTimeInSeconds}s")
     }
 
     @Throws(InterruptedException::class)
-    private fun doWork(`in`: String) {
-        for (ch in `in`.toCharArray()) {
-            if (ch == '.') {
-                Thread.sleep(1000)
-            }
-        }
+    private fun doWork(message: String) {
+        logger.printLn("doing work on '$message'")
+//        for (ch in message.toCharArray()) {
+//            if (ch == '.') {
+////                Thread.sleep(1000)
+//            }
+//        }
     }
 
 }
