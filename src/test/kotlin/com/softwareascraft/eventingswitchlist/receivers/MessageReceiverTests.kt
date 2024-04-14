@@ -1,6 +1,7 @@
 package com.softwareascraft.eventingswitchlist.receivers
 
 import assertk.assertThat
+import assertk.assertions.contains
 import assertk.assertions.isEqualTo
 import assertk.assertions.isTrue
 import com.softwareascraft.eventingswitchlist.logging.FakeLogger
@@ -18,7 +19,8 @@ class MessageReceiverTests {
         val testMessage = "test message"
         messageReceiver.receiveMessage(testMessage)
         assertThat(fakeStopWatch.startFunctionCalled).isTrue()
-        assertThat(fakeLogger.lastMessage()).isEqualTo("instance 1 [x] Received '$testMessage'")
+        val receivedMessage = "instance 1 [x] Received '$testMessage'"
+        assertThat(fakeLogger.currentMessages).contains(receivedMessage)
     }
 }
 
