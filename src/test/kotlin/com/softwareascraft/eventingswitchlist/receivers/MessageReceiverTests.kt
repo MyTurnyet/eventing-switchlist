@@ -21,6 +21,7 @@ class MessageReceiverTests {
         assertThat(fakeStopWatch.startFunctionCalled).isTrue()
         val receivedMessage = "instance 1 [x] Received '$testMessage'"
         assertThat(fakeLogger.currentMessages).contains(receivedMessage)
+        assertThat(fakeStopWatch.stopFunctionCalled).isTrue()
     }
 }
 

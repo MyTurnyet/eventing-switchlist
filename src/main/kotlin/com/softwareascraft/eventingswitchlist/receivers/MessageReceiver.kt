@@ -13,11 +13,10 @@ class MessageReceiver(
     @RabbitHandler
     @Throws(InterruptedException::class)
     fun receiveMessage(message: String) {
-//        val watch = StopWatch()
         stopWatch.start()
         logger.printLn("instance ${this.instanceNumber} [x] Received '$message'")
 //        doWork(message)
-//        watch.stop()
+    stopWatch.stop()
 //        logger.printLn(
 //            (("instance " + this.instanceNumber) +
 //                    " [x] Done in " + watch.totalTimeSeconds + "s")
