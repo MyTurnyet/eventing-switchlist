@@ -19,9 +19,11 @@ class MessageReceiverTests {
         val testMessage = "test message"
         messageReceiver.receiveMessage(testMessage)
         assertThat(fakeStopWatch.startFunctionCalled).isTrue()
-        val receivedMessage = "instance 1 [x] Received '$testMessage'"
-        assertThat(fakeLogger.currentMessages).contains(receivedMessage)
         assertThat(fakeStopWatch.stopFunctionCalled).isTrue()
+        val receivedMessage = "instance 1 [x] Received '$testMessage'"
+        val finishedMessage = "instance 1 [x] Done in 3.0s"
+        assertThat(fakeLogger.currentMessages).contains(receivedMessage)
+        assertThat(fakeLogger.currentMessages).contains(finishedMessage)
     }
 }
 

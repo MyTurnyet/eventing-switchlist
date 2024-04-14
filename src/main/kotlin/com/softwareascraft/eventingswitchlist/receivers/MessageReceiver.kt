@@ -16,11 +16,8 @@ class MessageReceiver(
         stopWatch.start()
         logger.printLn("instance ${this.instanceNumber} [x] Received '$message'")
 //        doWork(message)
-    stopWatch.stop()
-//        logger.printLn(
-//            (("instance " + this.instanceNumber) +
-//                    " [x] Done in " + watch.totalTimeSeconds + "s")
-//        )
+        stopWatch.stop()
+        logger.printLn("instance ${this.instanceNumber} [x] Done in ${stopWatch.totalTimeInSeconds}s")
     }
 
     @Throws(InterruptedException::class)
