@@ -12,9 +12,10 @@ import org.junit.jupiter.api.Test
 class MessageReceiverTests {
     @Test
     fun `creates MessageReceiver`() {
-        val fakeStopWatch = FakeStopWatch(3)
         val fakeLogger = FakeLogger()
-        val messageReceiver = MessageReceiver(1, fakeLogger, fakeStopWatch)
+        val fakeStopWatch = FakeStopWatch(3)
+        val fakeSwitchListWorker = FakeSleepWorker(fakeLogger)
+        val messageReceiver = MessageReceiver(1, fakeLogger, fakeStopWatch, fakeSwitchListWorker)
         val testMessage = "test message"
         messageReceiver.receiveMessage(testMessage)
         assertThat(fakeStopWatch.startFunctionCalled).isTrue()
@@ -22,11 +23,21 @@ class MessageReceiverTests {
         val receivedMessage = "instance 1 [x] Received '$testMessage'"
         val finishedMessage = "instance 1 [x] Done in 3.0s"
         val doingWorkMessage = "doing work on '$testMessage'"
+        val sleepWorkerMessage = "SleepWorker: Sleeping on '$testMessage'"
         assertThat(fakeLogger.currentMessages).containsExactlyInAnyOrder(
             receivedMessage,
             finishedMessage,
-            doingWorkMessage
+            doingWorkMessage,
+            sleepWorkerMessage
         )
     }
 }
+
+class FakeSleepWorker(val fakeLogger: FakeLogger) : SleepWorker {
+    override fun workOn(message: String) {
+        fakeLogger.printLn("SleepWorker: Sleeping on '$message'")
+    }
+
+}
+
 

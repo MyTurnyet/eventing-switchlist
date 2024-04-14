@@ -2,6 +2,7 @@ package com.softwareascraft.eventingswitchlist.configuration
 
 import com.softwareascraft.eventingswitchlist.logging.SystemLogger
 import com.softwareascraft.eventingswitchlist.receivers.MessageReceiver
+import com.softwareascraft.eventingswitchlist.receivers.SleepWorker
 import com.softwareascraft.eventingswitchlist.wrappers.StopWatchWrapper
 import org.springframework.amqp.core.Queue
 import org.springframework.context.annotation.Bean
@@ -16,13 +17,21 @@ class RabbitConfiguration {
 
     companion object {
         @Bean
-        fun receiver1(systemLogger: SystemLogger, stopWatch: StopWatchWrapper): MessageReceiver {
-            return MessageReceiver(1, systemLogger, stopWatch)
+        fun receiver1(
+            systemLogger: SystemLogger,
+            stopWatch: StopWatchWrapper,
+            sleepWorker: SleepWorker
+        ): MessageReceiver {
+            return MessageReceiver(1, systemLogger, stopWatch, sleepWorker)
         }
 
         @Bean
-        fun receiver2(systemLogger: SystemLogger, stopWatch: StopWatchWrapper): MessageReceiver {
-            return MessageReceiver(1, systemLogger, stopWatch)
+        fun receiver2(
+            systemLogger: SystemLogger,
+            stopWatch: StopWatchWrapper,
+            sleepWorker: SleepWorker
+        ): MessageReceiver {
+            return MessageReceiver(1, systemLogger, stopWatch, sleepWorker)
         }
     }
 }

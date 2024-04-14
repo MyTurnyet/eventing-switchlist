@@ -8,7 +8,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler
 class MessageReceiver(
     private val instanceNumber: Int,
     private val logger: SystemLogger,
-    private val stopWatch: StopWatchWrapper
+    private val stopWatch: StopWatchWrapper,
+    private val worker: SleepWorker
 ) {
     @RabbitHandler
     @Throws(InterruptedException::class)
@@ -23,11 +24,7 @@ class MessageReceiver(
     @Throws(InterruptedException::class)
     private fun doWork(message: String) {
         logger.printLn("doing work on '$message'")
-//        for (ch in message.toCharArray()) {
-//            if (ch == '.') {
-////                Thread.sleep(1000)
-//            }
-//        }
+        worker.workOn(message)
     }
 
 }
