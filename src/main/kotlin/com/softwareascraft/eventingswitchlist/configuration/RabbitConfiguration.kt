@@ -26,4 +26,5 @@ class RabbitConfiguration(val logger: SystemLogger, val stopWatch: StopWatchWrap
     ): MessageReceiver {
         return MessageReceiver(1, logger, stopWatch, sleepWorker)
     }
+
 }
