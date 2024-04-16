@@ -9,29 +9,21 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class RabbitConfiguration {
+class RabbitConfiguration(val logger: SystemLogger, val stopWatch: StopWatchWrapper, val sleepWorker: SleepWorker) {
     @Bean
     fun queue(): Queue {
         return Queue("eventing-switchlist")
     }
 
-    companion object {
-        @Bean
-        fun receiver1(
-            systemLogger: SystemLogger,
-            stopWatch: StopWatchWrapper,
-            sleepWorker: SleepWorker
-        ): MessageReceiver {
-            return MessageReceiver(1, systemLogger, stopWatch, sleepWorker)
-        }
+    @Bean
+    fun receiver1(
+    ): MessageReceiver {
+        return MessageReceiver(1, logger, stopWatch, sleepWorker)
+    }
 
-        @Bean
-        fun receiver2(
-            systemLogger: SystemLogger,
-            stopWatch: StopWatchWrapper,
-            sleepWorker: SleepWorker
-        ): MessageReceiver {
-            return MessageReceiver(1, systemLogger, stopWatch, sleepWorker)
-        }
+    @Bean
+    fun receiver2(
+    ): MessageReceiver {
+        return MessageReceiver(1, logger, stopWatch, sleepWorker)
     }
 }
