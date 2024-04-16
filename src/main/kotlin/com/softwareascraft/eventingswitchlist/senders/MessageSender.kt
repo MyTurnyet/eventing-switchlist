@@ -1,9 +1,14 @@
 package com.softwareascraft.eventingswitchlist.senders
 
 import com.softwareascraft.eventingswitchlist.logging.SystemLogger
+import org.springframework.beans.factory.annotation.Autowired
 
 
-class MessageSender(private val logger: SystemLogger, private val eventingConnection: EventingConnection, private val queueName: String) {
+class MessageSender(
+    @Autowired private val logger: SystemLogger,
+    @Autowired private val eventingConnection: EventingConnection,
+    @Autowired private val queueName: String
+) {
     fun send() {
         val builder = StringBuilder("Hello...")
 

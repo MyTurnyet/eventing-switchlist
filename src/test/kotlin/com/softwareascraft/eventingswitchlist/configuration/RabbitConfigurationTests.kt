@@ -2,6 +2,7 @@ package com.softwareascraft.eventingswitchlist.configuration
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import assertk.assertions.isNotNull
 import com.softwareascraft.eventingswitchlist.logging.FakeLogger
 import com.softwareascraft.eventingswitchlist.receivers.FakeSleepWorker
 import com.softwareascraft.eventingswitchlist.wrappers.FakeStopWatch
@@ -19,6 +20,9 @@ class RabbitConfigurationTests {
 
         val obj = RabbitConfiguration(logger, stopWatch, sleepWorker)
         val queue: Queue = obj.queue()
+        assertThat( obj.receiver1()).isNotNull()
+        assertThat( obj.receiver2()).isNotNull()
+
         assertThat(queue.name).isEqualTo("eventing-switchlist")
     }
 }
