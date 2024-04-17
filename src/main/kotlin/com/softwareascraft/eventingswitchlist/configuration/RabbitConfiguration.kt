@@ -8,6 +8,7 @@ import com.softwareascraft.eventingswitchlist.wrappers.StopWatchWrapper
 import org.springframework.amqp.core.FanoutExchange
 import org.springframework.amqp.core.Queue
 import org.springframework.amqp.rabbit.core.RabbitTemplate
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -19,8 +20,9 @@ class RabbitConfiguration(
 ) {
 
     @Bean
-    fun queue(): Queue {
-        return Queue("eventing-switchlist")
+    fun queue(@Value("\${softwareAsCraft.eventing.queue.name}") queueName: String): Queue {
+        logger.printLn("connecting to $queueName")
+        return Queue(queueName)
     }
 
     @Bean
@@ -34,14 +36,16 @@ class RabbitConfiguration(
     ): MessageReceiver {
         return MessageReceiver(1, logger, stopWatch, sleepWorker)
     }
+
     @Bean
     fun eventingConnection(rabbitTemplate: RabbitTemplate): EventingConnection {
         return RabbitEventingConnection(rabbitTemplate)
     }
 
     @Bean
-    fun fanOut(): FanoutExchange {
-        return FanoutExchange("softwareascraft.eventing.pizza")
+    fun fanOut(@Value("\${softwareAsCraft.eventing.exchange.name}") exchangeName: String): FanoutExchange {
+        logger.printLn("connecting to exchange: $exchangeName")
+        return FanoutExchange(exchangeName)
     }
 
 }

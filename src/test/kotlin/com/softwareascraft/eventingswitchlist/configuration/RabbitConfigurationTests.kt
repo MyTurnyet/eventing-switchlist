@@ -19,11 +19,13 @@ class RabbitConfigurationTests {
         val sleepWorker = FakeSleepWorker(logger)
 
         val obj = RabbitConfiguration(logger, stopWatch, sleepWorker)
-        val queue: Queue = obj.queue()
-        val fanoutExchange = obj.fanOut()
-        assertThat( obj.receiver1()).isNotNull()
-        assertThat( obj.receiver2()).isNotNull()
-        assertThat( fanoutExchange.name).isEqualTo("softwareascraft.eventing.pizza")
-        assertThat(queue.name).isEqualTo("eventing-switchlist")
+        val queueName = "some.queue.name"
+        val queue: Queue = obj.queue(queueName)
+        val exchangeName = "some.exchange.name"
+        val fanoutExchange = obj.fanOut(exchangeName)
+        assertThat(obj.receiver1()).isNotNull()
+        assertThat(obj.receiver2()).isNotNull()
+        assertThat(fanoutExchange.name).isEqualTo(exchangeName)
+        assertThat(queue.name).isEqualTo(queueName)
     }
 }

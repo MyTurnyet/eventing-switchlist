@@ -2,13 +2,9 @@ spring:
   application:
     name: eventing-switchlist
 
-  profiles:
-    active: usage_message
-
-  logging:
-    level:
-      org: ERROR
-
-  tutorial:
-    client:
-      duration: 10000
+softwareAsCraft:
+  eventing:
+    exchange:
+      name: "switchlist.exchange"
+    queue:
+      name: "switchlist.queue"
