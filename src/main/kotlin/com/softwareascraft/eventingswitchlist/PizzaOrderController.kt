@@ -1,10 +1,16 @@
 package com.softwareascraft.eventingswitchlist
 
+import org.springframework.web.bind.annotation.*
+
+
+@RestController
+@RequestMapping("/api/pizza")
 class PizzaOrderController {
-    fun addPizzaOrder(pizzaOrder: String):PizzaOrderDTO {
+    @GetMapping("/addOrder/{pizzaOrder}")
+    fun addPizzaOrder(@PathVariable pizzaOrder: String): PizzaOrderDTO {
         return PizzaOrderDTO("12345", pizzaOrder)
     }
 
 }
 
-data class PizzaOrderDTO (val orderId: String= "", val pizzaName: String= "")
+data class PizzaOrderDTO(val orderId: String = "", val pizzaName: String = "")
