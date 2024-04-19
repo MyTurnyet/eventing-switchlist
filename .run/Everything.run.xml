@@ -2,6 +2,7 @@
   <configuration default="false" name="Everything" type="CompoundRunConfigurationType">
     <toRun name="All Tests" type="JUnit" />
     <toRun name="Unit Tests" type="JUnit" />
+    <toRun name="EventingSwitchlistApplication" type="SpringBootApplicationConfigurationType" />
     <method v="2" />
   </configuration>
 </component>
