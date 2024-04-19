@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Everything" type="CompoundRunConfigurationType">
+    <toRun name="All Tests" type="JUnit" />
+    <toRun name="Unit Tests" type="JUnit" />
+    <method v="2" />
+  </configuration>
+</component>
