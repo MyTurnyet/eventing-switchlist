@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*
 class PizzaOrderController {
     @GetMapping("/addOrder/{pizzaOrder}")
     fun addPizzaOrder(@PathVariable pizzaOrder: String): PizzaOrderDTO {
-        return PizzaOrderDTO("12345", pizzaOrder)
+        val orderId = "12345"
+        return PizzaOrderDTO(orderId, "$pizzaOrder $orderId")
     }
 
 }

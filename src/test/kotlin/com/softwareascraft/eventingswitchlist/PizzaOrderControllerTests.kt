@@ -15,9 +15,10 @@ class PizzaOrderControllerTests {
     fun `creates PizzaOrderController`() {
         val controller = PizzaOrderController()
         val orderName = "Small Pepperoni"
+        val orderId = "12345"
         val pizzaOrder = controller.addPizzaOrder(orderName)
-        assertThat(pizzaOrder.pizzaName).isEqualTo(orderName)
-        assertThat(pizzaOrder.orderId).isEqualTo("12345")
+        assertThat(pizzaOrder.pizzaName).isEqualTo("$orderName $orderId")
+        assertThat(pizzaOrder.orderId).isEqualTo(orderId)
     }
 }
 
@@ -29,6 +30,6 @@ class PizzaOrderIntegrationTests(@Autowired val restTemplate: TestRestTemplate) 
     fun `calls add pizza order on controller`() {
         val entity = restTemplate.getForEntity<PizzaOrderDTO>("/api/pizza/addOrder/pepperoni")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(entity.body?.pizzaName ?: "").contains("pepperoni")
+        assertThat(entity.body?.pizzaName ?: "").contains("pepperoni 12345")
     }
 }
