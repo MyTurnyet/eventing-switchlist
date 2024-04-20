@@ -10,15 +10,15 @@ import org.springframework.boot.test.web.client.getForEntity
 import org.springframework.http.HttpStatus
 
 @Tag("unit")
-class PizzaOrderControllerTests {
+class CarStatusControllerTests {
     @Test
     fun `creates PizzaOrderController`() {
-        val controller = PizzaOrderController()
-        val orderName = "Small Pepperoni"
-        val orderId = "12345"
-        val pizzaOrder = controller.addPizzaOrder(orderName)
-        assertThat(pizzaOrder.pizzaName).isEqualTo("$orderName $orderId")
-        assertThat(pizzaOrder.orderId).isEqualTo(orderId)
+        val controller = CarStatusController()
+        val expectedStatus = "OK"
+        val carId = "12345"
+        val rollingStockStatus = controller.getRollingStockStatus(carId)
+        assertThat(rollingStockStatus.status).isEqualTo(expectedStatus)
+        assertThat(rollingStockStatus.rollingStockId).isEqualTo(carId)
     }
 }
 
@@ -28,8 +28,8 @@ class PizzaOrderControllerTests {
 class PizzaOrderIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
     @Test
     fun `calls add pizza order on controller`() {
-        val entity = restTemplate.getForEntity<PizzaOrderDTO>("/api/pizza/addOrder/pepperoni")
+        val entity = restTemplate.getForEntity<RollingStockStatus>("/api/status/rollingStock/24332")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(entity.body?.pizzaName ?: "").contains("pepperoni 12345")
+        assertThat(entity.body?.status ?: "").contains("OK")
     }
 }
