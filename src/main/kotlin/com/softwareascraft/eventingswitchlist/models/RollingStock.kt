@@ -5,13 +5,13 @@ interface FreightCar {
     fun isAarType(expectedType: CarType): Boolean
 }
 
+interface CarriesLoad {
+    fun load()
+    fun isLoaded(): Boolean
+}
 
 abstract class RollingStock(private val roadName: String, private val roadNumber: Int, private val carType: CarType) :
     FreightCar {
-
-    fun isEmpty(): Boolean {
-        return true
-    }
 
     override val roadMarkings: String
         get() = "$roadName $roadNumber"
@@ -22,7 +22,16 @@ abstract class RollingStock(private val roadName: String, private val roadNumber
 
 }
 
-class Boxcar(roadName: String, roadNumber: Int) :
+class Boxcar(roadName: String, roadNumber: Int) : CarriesLoad,
     RollingStock(roadName, roadNumber, CarType.Boxcar) {
+    private var loaded: Boolean = false
+
+    override fun load() {
+        this.loaded = true
+    }
+
+    override fun isLoaded(): Boolean {
+        return this.loaded
+    }
 
 }
