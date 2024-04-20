@@ -10,9 +10,11 @@ import org.junit.jupiter.api.Test
 class RollingStockTests {
     @Test
     fun `creates RollingStock`() {
-        val rollingStock = RollingStock("BNSF", 1234)
-        assertThat(rollingStock.roadMarkings()).isEqualTo("BNSF 1234")
+        val rollingStock = Boxcar("BNSF", 1234)
+        assertThat(rollingStock.roadMarkings).isEqualTo("BNSF 1234")
         assertThat(rollingStock.isEmpty()).isTrue()
-
+        assertThat(rollingStock.isAarType(CarType.Boxcar)).isTrue()
     }
+
 }
+
