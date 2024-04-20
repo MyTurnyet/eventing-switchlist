@@ -14,7 +14,7 @@ class CarStatusControllerTests {
     @Test
     fun `creates PizzaOrderController`() {
         val controller = CarStatusController()
-        val expectedStatus = CarStatus.OK
+        val expectedStatus = CarStatus.EMPTY
         val carId = "12345"
         val rollingStockStatus = controller.getRollingStockStatus(carId)
         assertThat(rollingStockStatus.status).isEqualTo(expectedStatus)
@@ -31,5 +31,6 @@ class PizzaOrderIntegrationTests(@Autowired val restTemplate: TestRestTemplate) 
         val entity = restTemplate.getForEntity<RollingStockStatus>("/api/status/rollingStock/24332")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
         assertThat(entity.body?.rollingStockId).isEqualTo("24332")
+        assertThat(entity.body?.status).isEqualTo(CarStatus.EMPTY)
     }
 }
