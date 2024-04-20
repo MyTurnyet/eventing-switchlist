@@ -1,4 +1,4 @@
-package com.softwareascraft.eventingswitchlist
+package com.softwareascraft.eventingswitchlist.status
 
 import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.springframework.beans.factory.annotation.Autowired
