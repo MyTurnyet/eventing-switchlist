@@ -4,9 +4,9 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/api/status")
+@RequestMapping("/api/status/rollingStock")
 class CarStatusController {
-    @GetMapping("/rollingStock/{rollingStockId}")
+    @GetMapping("/{rollingStockId}")
     fun getRollingStockStatus(@PathVariable rollingStockId: String): RollingStockStatus {
         val status = CarStatus.EMPTY
         return RollingStockStatus(rollingStockId, status)

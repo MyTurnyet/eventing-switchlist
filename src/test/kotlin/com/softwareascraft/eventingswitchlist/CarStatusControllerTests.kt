@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus
 @Tag("unit")
 class CarStatusControllerTests {
     @Test
-    fun `creates PizzaOrderController`() {
+    fun `creates CarStatusController`() {
         val controller = CarStatusController()
         val expectedStatus = CarStatus.EMPTY
         val carId = "12345"
@@ -25,7 +25,7 @@ class CarStatusControllerTests {
 
 @Tag("integration")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class PizzaOrderIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
+class CarStatusIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
     @Test
     fun `calls add pizza order on controller`() {
         val entity = restTemplate.getForEntity<RollingStockStatus>("/api/status/rollingStock/24332")
