@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test
 import org.springframework.amqp.core.FanoutExchange
 
 @Tag("unit")
-class MessageSenderTests {
+class BoringMessageSenderTests {
     @Test
     fun `creates MessageSender`() {
         val eventingConnection = FakeEventingConnection()
         val logger = FakeLogger()
         val fanoutExchange = FanoutExchange("foo.name")
 
-        val sender = MessageSender(logger, eventingConnection, fanoutExchange)
+        val sender = BoringMessageSender(logger, eventingConnection, fanoutExchange)
 
         sender.send()
 
