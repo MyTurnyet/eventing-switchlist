@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.*
 class CarStatusController {
     @GetMapping("/rollingStock/{rollingStockId}")
     fun getRollingStockStatus(@PathVariable rollingStockId: String): RollingStockStatus {
-        val status = "OK"
+        val status = CarStatus.OK
         return RollingStockStatus(rollingStockId, status)
     }
 
 }
-
-data class RollingStockStatus(val rollingStockId: String, val status: String = "UNKOWN")
+enum class CarStatus{
+    OK,
+    UNKNOWN
+}
+data class RollingStockStatus(val rollingStockId: String, val status: CarStatus = CarStatus.UNKNOWN)
