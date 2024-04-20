@@ -5,4 +5,8 @@ class RollingStock(private val roadName: String, private val roadNumber: Int) {
         return "$roadName $roadNumber"
     }
 
+    fun isEmpty(): Boolean {
+        return true
+    }
+
 }
