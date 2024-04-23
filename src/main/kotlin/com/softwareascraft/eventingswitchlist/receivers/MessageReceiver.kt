@@ -3,8 +3,10 @@ package com.softwareascraft.eventingswitchlist.receivers
 import com.softwareascraft.eventingswitchlist.logging.SystemLogger
 import com.softwareascraft.eventingswitchlist.wrappers.StopWatchWrapper
 import org.springframework.amqp.rabbit.annotation.RabbitHandler
+import org.springframework.amqp.rabbit.annotation.RabbitListener
 
 
+@RabbitListener(queues = ["#{statusQueue1.name}"])
 class MessageReceiver(
     private val instanceNumber: Int,
     private val logger: SystemLogger,
@@ -16,7 +18,7 @@ class MessageReceiver(
     fun receiveMessage(message: String) {
         stopWatch.start()
         logger.printLn("instance ${this.instanceNumber} [x] Received '$message'")
-       doWork(message)
+        doWork(message)
         stopWatch.stop()
         logger.printLn("instance ${this.instanceNumber} [x] Done in ${stopWatch.totalTimeInSeconds}s")
     }

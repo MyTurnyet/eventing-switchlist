@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.springframework.amqp.core.FanoutExchange
+import org.springframework.amqp.core.TopicExchange
 
 @Tag("unit")
 class BoringMessageSenderTests {
@@ -12,7 +13,7 @@ class BoringMessageSenderTests {
     fun `creates MessageSender`() {
         val eventingConnection = FakeEventingConnection()
         val logger = FakeLogger()
-        val fanoutExchange = FanoutExchange("foo.name")
+        val fanoutExchange = TopicExchange("foo.name")
 
         val sender = BoringMessageSender(logger, eventingConnection, fanoutExchange)
 
@@ -26,6 +27,10 @@ class BoringMessageSenderTests {
 class FakeEventingConnection : EventingConnection {
     var convertAndSendCalled: Boolean = false
     override fun convertAndSend(exchange: FanoutExchange, message: String) {
+        this.convertAndSendCalled = true
+    }
+
+    override fun convertAndSend(exchange: TopicExchange, key: String, message: String) {
         this.convertAndSendCalled = true
     }
 
