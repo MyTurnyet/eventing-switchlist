@@ -9,14 +9,15 @@ import java.util.concurrent.atomic.AtomicInteger
 
 
 interface MessageSender {
-    fun send()
+    fun send(message: String)
 }
+
 @Service
 class BoringMessageSender(
     @Autowired private val logger: SystemLogger,
     @Autowired private val eventingConnection: EventingConnection,
     @Autowired private val topic: TopicExchange
-): MessageSender {
+) : MessageSender {
     private var index: AtomicInteger = AtomicInteger(0)
 
     private var count: AtomicInteger = AtomicInteger(0)
@@ -27,16 +28,13 @@ class BoringMessageSender(
     )
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
-    override fun send() {
-        val builder = StringBuilder("Hello to ")
+    override fun send(message: String) {
         if (this.index.incrementAndGet() === keys.size) {
             this.index.set(0)
         }
         val key = keys[this.index.get()]
-        builder.append(key).append(' ')
-        builder.append(count.incrementAndGet())
-        val message = builder.toString()
         eventingConnection.convertAndSend(topic, key, message)
-        println(" [x] Sent '$message'")
+        val messageSent = " [x] Sent '$message'"
+        logger.printLn(messageSent)
     }
 }

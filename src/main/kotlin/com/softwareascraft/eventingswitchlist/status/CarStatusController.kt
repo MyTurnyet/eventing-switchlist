@@ -14,7 +14,7 @@ class CarStatusController(@Autowired val messageSender: MessageSender) {
 
     @GetMapping("/{rollingStockId}")
     fun getRollingStockStatus(@PathVariable rollingStockId: String): RollingStockStatus {
-        messageSender.send()
+        messageSender.send("getting status for Rolling Stock: ${rollingStockId}")
         val status = CarStatus.EMPTY
         return RollingStockStatus(rollingStockId, status)
     }

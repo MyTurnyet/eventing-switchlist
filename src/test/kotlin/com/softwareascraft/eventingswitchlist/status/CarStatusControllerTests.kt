@@ -23,7 +23,7 @@ class CarStatusControllerTests {
 class FakeMessageSender : MessageSender {
     var sentMessage: Boolean = false
 
-    override fun send() {
+    override fun send(message: String) {
         this.sentMessage = true
     }
 

@@ -17,10 +17,12 @@ class BoringMessageSenderTests {
 
         val sender = BoringMessageSender(logger, eventingConnection, fanoutExchange)
 
-        sender.send()
+        val message = "Hello.2"
+        val expectedMessage = " [x] Sent '$message'"
+        sender.send(message)
 
         assertThat(eventingConnection.convertAndSendCalled).isTrue()
-        assertThat(logger.currentMessages).containsExactly(" [x] Sent 'Hello.1'")
+        assertThat(logger.currentMessages).containsExactly(expectedMessage)
     }
 }
 
