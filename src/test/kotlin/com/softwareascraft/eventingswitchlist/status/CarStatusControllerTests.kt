@@ -4,6 +4,7 @@ import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
+import org.springframework.http.ResponseEntity
 
 @Tag("unit")
 class CarStatusControllerTests {
@@ -13,9 +14,9 @@ class CarStatusControllerTests {
         val controller = CarStatusController(messageSender)
         val expectedStatus = CarStatus.EMPTY
         val carId = "12345"
-        val rollingStockStatus = controller.getRollingStockStatus(carId)
-        assertThat(rollingStockStatus.status).isEqualTo(expectedStatus)
-        assertThat(rollingStockStatus.rollingStockId).isEqualTo(carId)
+        val rollingStockStatus: ResponseEntity<RollingStockStatus> = controller.getRollingStockStatus(carId)
+        assertThat(rollingStockStatus.body?.status).isEqualTo(expectedStatus)
+        assertThat(rollingStockStatus.body?.rollingStockId).isEqualTo(carId)
         assertThat(messageSender.sentMessage).isTrue()
     }
 }

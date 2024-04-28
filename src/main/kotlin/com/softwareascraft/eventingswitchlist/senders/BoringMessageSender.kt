@@ -3,7 +3,6 @@ package com.softwareascraft.eventingswitchlist.senders
 import com.softwareascraft.eventingswitchlist.logging.SystemLogger
 import org.springframework.amqp.core.TopicExchange
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -20,16 +19,13 @@ class BoringMessageSender(
 ) : MessageSender {
     private var index: AtomicInteger = AtomicInteger(0)
 
-    private var count: AtomicInteger = AtomicInteger(0)
-
     private val keys = arrayOf(
         "status.orange.rabbit", "lazy.orange.elephant", "quick.orange.fox",
         "lazy.rollingStock.fox", "lazy.pink.rollingStock", "status.brown.fox"
     )
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
     override fun send(message: String) {
-        if (this.index.incrementAndGet() === keys.size) {
+        if (this.index.incrementAndGet() == keys.size) {
             this.index.set(0)
         }
         val key = keys[this.index.get()]

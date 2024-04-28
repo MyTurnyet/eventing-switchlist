@@ -1,7 +1,9 @@
 spring:
   application:
     name: eventing-switchlist
-
+  mvc:
+    converters:
+      preferred-json-mapper: gson
 softwareAsCraft:
   eventing:
     exchange:
