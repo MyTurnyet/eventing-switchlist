@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Import
 import org.springframework.http.HttpStatus
 
 @TestConfiguration
-class CarStatusControllerTestConfiguration{
+class CarStatusControllerTestConfiguration {
     @Bean
-    fun messageSender(): MessageSender{
+    fun messageSender(): MessageSender {
         return FakeMessageSender()
     }
 }
@@ -29,7 +29,8 @@ class CarStatusIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
     fun `calls add pizza order on controller`() {
         val entity = restTemplate.getForEntity<RollingStockStatus>("/api/status/rollingStock/24332")
         Assertions.assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        Assertions.assertThat(entity.body?.rollingStockId).isEqualTo("24332")
-        Assertions.assertThat(entity.body?.status).isEqualTo(CarStatus.EMPTY)
+        val rollingStockStatus: RollingStockStatus = entity.body!!
+        Assertions.assertThat(rollingStockStatus.rollingStockId).isEqualTo("24332")
+        Assertions.assertThat(rollingStockStatus.status).isEqualTo(CarStatus.EMPTY)
     }
 }

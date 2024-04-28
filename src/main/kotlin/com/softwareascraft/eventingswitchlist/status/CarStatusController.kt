@@ -1,6 +1,5 @@
 package com.softwareascraft.eventingswitchlist.status
 
-import com.google.gson.annotations.SerializedName
 import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -25,9 +24,7 @@ class CarStatusController(@Autowired val messageSender: MessageSender) {
 }
 
 enum class CarStatus {
-    @SerializedName("empty")
     EMPTY,
-    @SerializedName("unknown")
     UNKNOWN
 }
 
