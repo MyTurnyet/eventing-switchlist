@@ -7,8 +7,8 @@ services:
       - "5672:5672"
       - "15672:15672"
   mongo_db:
-      image: mongo-express
-      restart: unless-stopped
+      build: ./mongo_setup
+      restart: always
       env_file: ./.env
       networks:
         default:
@@ -19,25 +19,6 @@ services:
         - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
       volumes:
         - db:/data/db
-#  app:
-#    depends_on:
-#      - rabbitmq
-#      - mongo_db
-#    build: ./
-#    restart: on-failure
-#    env_file: ./.env
-#    ports:
-#      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
-#    networks:
-#      default:
-#    environment:
-#      SPRING_APPLICATION_JSON: '{
-#            "spring.data.mongodb.uri" : "mongodb://$MONGODB_USER:$MONGODB_PASSWORD@mongo_db:$MONGODB_DOCKER_PORT/$MONGODB_DATABASE?authSource=admin"
-#          }'
-#    volumes:
-#      - .m2:/root/.m2
-#    stdin_open: true
-#    tty: true
 
 volumes:
    db:
