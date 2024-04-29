@@ -1,4 +1,6 @@
-db.switchlist_db.drop();
+db.dropDatabase();
+db.createCollection("switchlist_db");
+
 db.switchlist_db.insertMany(
     [
         {
