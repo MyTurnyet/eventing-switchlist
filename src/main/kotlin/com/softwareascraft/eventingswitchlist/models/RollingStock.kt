@@ -13,7 +13,7 @@ interface CarriesLoad {
 abstract class RollingStock(
     private val roadName: String,
     private val roadNumber: Int,
-    private val carType2: String = ""
+    private val carType: String = ""
 ) :
     FreightCar {
 
@@ -21,7 +21,7 @@ abstract class RollingStock(
         get() = "$roadName $roadNumber"
 
     override fun isAarType(expectedType: String): Boolean {
-        return this.carType2 == expectedType
+        return this.carType == expectedType
     }
 
 }

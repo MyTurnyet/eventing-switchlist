@@ -1,2032 +1,2031 @@
 db.dropDatabase();
-db.createCollection("switchlist_db");
+db.createCollection("rolling_stock");
 
-db.switchlist_db.insertMany(
+db.rolling_stock.insertMany(
     [
         {
-            "Number": 625326,
-            "Road": "ATSF",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 65,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 625344,
-            "Road": "ATSF",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 65,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 625377,
-            "Road": "ATSF",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 65,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 747413,
-            "Road": "BN",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 70,
-            "Weight": 1.3,
-            "Color": "Green"
-        },
-        {
-            "Number": 747406,
-            "Road": "BN",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 70,
-            "Weight": 1.3,
-            "Color": "Green"
-        },
-        {
-            "Number": 74741,
-            "Road": "BN",
-            "AAR": "XMB",
-            "Type": "Beer Boxcar",
-            "Length": 70,
-            "Weight": 1.3,
-            "Color": "Green"
-        },
-        {
-            "Number": 287010,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287088,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287090,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287091,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287092,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287187,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 760651,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760653,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760656,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760659,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760663,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760666,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 760667,
-            "Road": "BNSF",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 1020,
-            "Road": "CDAC",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 1022,
-            "Road": "CDAC",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 1027,
-            "Road": "CDAC",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 1030,
-            "Road": "CDAC",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 1034,
-            "Road": "CDAC",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 215120,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 215131,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 215136,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 215137,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 215140,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 218103,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218104,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218105,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218106,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218107,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218108,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218109,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218110,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218111,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218112,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218113,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 218114,
-            "Road": "CP",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 287198,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287297,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 287299,
-            "Road": "BN",
-            "AAR": "XMO",
-            "Type": "Box OvrHt",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 51580,
-            "Road": "ATSF",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 51585,
-            "Road": "ATSF",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 8004,
-            "Road": "BCIT",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 41680,
-            "Road": "BCIT",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 4050,
-            "Road": "CNA",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 16729,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 16731,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 16752,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 20060,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 49201,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 55947,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 84991,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 85697,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 167060,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 204050,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 283032,
-            "Road": "CN",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Silver"
-        },
-        {
-            "Number": 285602,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 285605,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 285606,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 285608,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 286264,
-            "Road": "CP",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 405014,
-            "Road": "CNA",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 405020,
-            "Road": "CNA",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 413002,
-            "Road": "CN",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 384606,
-            "Road": "GTW",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 25011,
-            "Road": "MRL",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 25044,
-            "Road": "MRL",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 25055,
-            "Road": "MRL",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 7809,
-            "Road": "ONT",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 106,
-            "Road": "RPCX",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 189,
-            "Road": "SOO",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 18979,
-            "Road": "SOO",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 18988,
-            "Road": "SOO",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 474,
-            "Road": "USLX",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Orange"
-        },
-        {
-            "Number": 10392,
-            "Road": "USLX",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 5465,
-            "Road": "BCOL",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 4521,
-            "Road": "PGE",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 550235,
-            "Road": "CN",
-            "AAR": "XM",
-            "Type": "Boxcar",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 873091,
-            "Road": "BCIT",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 873096,
-            "Road": "BCIT",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 873069,
-            "Road": "BCIT",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 559511,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 559519,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 559557,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Brown"
-        },
-        {
-            "Number": 625018,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 625029,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 625055,
-            "Road": "BNSF",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 318005,
-            "Road": "CP",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 318088,
-            "Road": "CP",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 70061,
-            "Road": "TCAX",
-            "AAR": "FCB",
-            "Type": "Center Beam",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 317128,
-            "Road": "CP",
-            "AAR": "FB",
-            "Type": "FlatBulkHead",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 317137,
-            "Road": "CP",
-            "AAR": "FB",
-            "Type": "FlatBulkHead",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 317642,
-            "Road": "CP",
-            "AAR": "FB",
-            "Type": "FlatBulkHead",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 317438,
-            "Road": "CP",
-            "AAR": "FB",
-            "Type": "FlatBulkHead",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 459003,
-            "Road": "GSVR",
-            "AAR": "FB",
-            "Type": "FlatBulkHead",
-            "Length": 62,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 79104,
-            "Road": "ACL",
-            "AAR": "FD",
-            "Type": "Flatcar-Dep",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Black"
-        },
-        {
-            "Number": 504485,
-            "Road": "CP",
-            "AAR": "FT",
-            "Type": "FlatTrailer",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 569449,
-            "Road": "BN",
-            "AAR": "GN",
-            "Type": "Gondola",
-            "Length": 54,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 9077,
-            "Road": "BCOL",
-            "AAR": "GN",
-            "Type": "Gondola",
-            "Length": 54,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 9150,
-            "Road": "BCOL",
-            "AAR": "GN",
-            "Type": "Gondola",
-            "Length": 54,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 72839,
-            "Road": "GN",
-            "AAR": "GN",
-            "Type": "Gondola",
-            "Length": 54,
-            "Weight": 1.1,
-            "Color": "Red"
-        },
-        {
-            "Number": 5465,
-            "Road": "BCOL",
-            "AAR": "GN",
-            "Type": "Gondola",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Green"
-        },
-        {
-            "Number": 406680,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 406685,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 406692,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 406696,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 407451,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 407463,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 407472,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 407489,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 407495,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 407484,
-            "Road": "BNSF",
-            "AAR": "HM",
-            "Type": "Hop2Bay",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 315060,
-            "Road": "GTW",
-            "AAR": "HM",
-            "Type": "HopCmnt",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Blue"
-        },
-        {
-            "Number": 5,
-            "Road": "BCAX",
-            "AAR": "HM",
-            "Type": "HopCmnt",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 667992,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668446,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668463,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668476,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668613,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668729,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668752,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668763,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668524,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 668595,
-            "Road": "BNSF",
-            "AAR": "GHC",
-            "Type": "HopCoal",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 1000,
-            "Road": "PCC",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1001,
-            "Road": "CBRW",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1002,
-            "Road": "BLMR",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1004,
-            "Road": "BLMR",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1005,
-            "Road": "BLMR",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1007,
-            "Road": "BLMR",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1009,
-            "Road": "CBRW",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 1018,
-            "Road": "BLMR",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 2011,
-            "Road": "PCC",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 51110,
-            "Road": "ACFX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 51134,
-            "Road": "ACFX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 51491,
-            "Road": "ACFX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 70047,
-            "Road": "SOO",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 70056,
-            "Road": "SOO",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 70059,
-            "Road": "SOO",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 100251,
-            "Road": "CNWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 100268,
-            "Road": "CNWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 100456,
-            "Road": "CNWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 109952,
-            "Road": "CNWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 110065,
-            "Road": "CNWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 382737,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 384978,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 385193,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 385321,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 385468,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 388954,
-            "Road": "CP",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Gray"
-        },
-        {
-            "Number": 396012,
-            "Road": "ALNX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 396033,
-            "Road": "ALNX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 397425,
-            "Road": "SKPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 459540,
-            "Road": "BN",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 459608,
-            "Road": "BN",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 459637,
-            "Road": "BN",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 459828,
-            "Road": "BN",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 600205,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 602128,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 602285,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 606333,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 606420,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 606525,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 606617,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 606704,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 606818,
-            "Road": "CPWX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 625385,
-            "Road": "SKPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Orange"
-        },
-        {
-            "Number": 628004,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628036,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628204,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628257,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628315,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628468,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628513,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628122,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 628172,
-            "Road": "ALPX",
-            "AAR": "HTC",
-            "Type": "HopGrain",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Blue"
-        },
-        {
-            "Number": 50070,
-            "Road": "ADMX",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 101073,
-            "Road": "SOO",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 119145,
-            "Road": "SOO",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 420001,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 420123,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 422265,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 422297,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 422323,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 424964,
-            "Road": "BNSF",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Brown"
-        },
-        {
-            "Number": 458585,
-            "Road": "BN",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 458633,
-            "Road": "BN",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 458659,
-            "Road": "BN",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 458710,
-            "Road": "BN",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "Green"
-        },
-        {
-            "Number": 50051,
-            "Road": "ADMX",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 101067,
-            "Road": "SOO",
-            "AAR": "HT",
-            "Type": "Hopper",
-            "Length": 52,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 1254,
-            "Road": "HCPX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Orange"
-        },
-        {
-            "Number": 29866,
-            "Road": "ADMX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Black"
-        },
-        {
-            "Number": 86471,
-            "Road": "ACFX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 240300,
-            "Road": "SHPX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Black"
-        },
-        {
-            "Number": 875000,
-            "Road": "BN",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Black"
-        },
-        {
-            "Number": 17040,
-            "Road": "SHPX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "White"
-        },
-        {
-            "Number": 19421,
-            "Road": "ACFX",
-            "AAR": "TC",
-            "Type": "Tank Gas",
-            "Length": 50,
-            "Weight": 1.1,
-            "Color": "Black"
-        },
-        {
-            "Number": 1410,
-            "Road": "PLYX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 1650,
-            "Road": "PLYX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 3014,
-            "Road": "MD&W",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 3054,
-            "Road": "MD&W",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "White"
-        },
-        {
-            "Number": 4471,
-            "Road": "LUNX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 4473,
-            "Road": "LUNX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 4474,
-            "Road": "LUNX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 4476,
-            "Road": "LUNX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 4479,
-            "Road": "LUNX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 4564,
-            "Road": "CFPX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 4573,
-            "Road": "CFPX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Red"
-        },
-        {
-            "Number": 20075,
-            "Road": "TCAX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 20199,
-            "Road": "TCAX",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Yellow"
-        },
-        {
-            "Number": 800100,
-            "Road": "BCIT",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 800116,
-            "Road": "BCIT",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 800119,
-            "Road": "BCIT",
-            "AAR": "XPT",
-            "Type": "Thrall Box",
-            "Length": 60,
-            "Weight": 1.2,
-            "Color": "Green"
-        },
-        {
-            "Number": 10022,
-            "Road": "GPMX",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Blue"
-        },
-        {
-            "Number": 10035,
-            "Road": "GPMX",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Blue"
-        },
-        {
-            "Number": 10040,
-            "Road": "GPMX",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Blue"
-        },
-        {
-            "Number": 541310,
-            "Road": "BNSF",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Green"
-        },
-        {
-            "Number": 541331,
-            "Road": "BNSF",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Green"
-        },
-        {
-            "Number": 541427,
-            "Road": "BNSF",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Brown"
-        },
-        {
-            "Number": 10008,
-            "Road": "GPMX",
-            "AAR": "GTS",
-            "Type": "WoodChip Gon",
-            "Length": 32,
-            "Weight": 0.9,
-            "Color": "Blue"
+            "number": 625326,
+            "road": "ATSF",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 65,
+
+            "color": "Red"
+        },
+        {
+            "number": 625344,
+            "road": "ATSF",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 65,
+
+            "color": "Red"
+        },
+        {
+            "number": 625377,
+            "road": "ATSF",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 65,
+
+            "color": "Red"
+        },
+        {
+            "number": 747413,
+            "road": "BN",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 70,
+
+            "color": "Green"
+        },
+        {
+            "number": 747406,
+            "road": "BN",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 70,
+
+            "color": "Green"
+        },
+        {
+            "number": 74741,
+            "road": "BN",
+            "aar": "XMB",
+            "description": "Beer Boxcar",
+            "length": 70,
+
+            "color": "Green"
+        },
+        {
+            "number": 287010,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287088,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287090,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287091,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287092,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287187,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 760651,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760653,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760656,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760659,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760663,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760666,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 760667,
+            "road": "BNSF",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 1020,
+            "road": "CDAC",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 1022,
+            "road": "CDAC",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 1027,
+            "road": "CDAC",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 1030,
+            "road": "CDAC",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 1034,
+            "road": "CDAC",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 215120,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 215131,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 215136,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 215137,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 215140,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Brown"
+        },
+        {
+            "number": 218103,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218104,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218105,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218106,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218107,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218108,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218109,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218110,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218111,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218112,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218113,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 218114,
+            "road": "CP",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 287198,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287297,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 287299,
+            "road": "BN",
+            "aar": "XMO",
+            "description": "Box OvrHt",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 51580,
+            "road": "ATSF",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 51585,
+            "road": "ATSF",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 8004,
+            "road": "BCIT",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 41680,
+            "road": "BCIT",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 4050,
+            "road": "CNA",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 16729,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 16731,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 16752,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 20060,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 49201,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 55947,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Red"
+        },
+        {
+            "number": 84991,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 85697,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 167060,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 204050,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Red"
+        },
+        {
+            "number": 283032,
+            "road": "CN",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Silver"
+        },
+        {
+            "number": 285602,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 285605,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 285606,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 285608,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 286264,
+            "road": "CP",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 405014,
+            "road": "CNA",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 405020,
+            "road": "CNA",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 413002,
+            "road": "CN",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 384606,
+            "road": "GTW",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 25011,
+            "road": "MRL",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 25044,
+            "road": "MRL",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 25055,
+            "road": "MRL",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 7809,
+            "road": "ONT",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 106,
+            "road": "RPCX",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Red"
+        },
+        {
+            "number": 189,
+            "road": "SOO",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 18979,
+            "road": "SOO",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 18988,
+            "road": "SOO",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 474,
+            "road": "USLX",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Orange"
+        },
+        {
+            "number": 10392,
+            "road": "USLX",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Blue"
+        },
+        {
+            "number": 5465,
+            "road": "BCOL",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Green"
+        },
+        {
+            "number": 4521,
+            "road": "PGE",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 550235,
+            "road": "CN",
+            "aar": "XM",
+            "description": "Boxcar",
+            "length": 50,
+
+            "color": "Brown"
+        },
+        {
+            "number": 873091,
+            "road": "BCIT",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 873096,
+            "road": "BCIT",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 873069,
+            "road": "BCIT",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 559511,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Brown"
+        },
+        {
+            "number": 559519,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Brown"
+        },
+        {
+            "number": 559557,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Brown"
+        },
+        {
+            "number": 625018,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 625029,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 625055,
+            "road": "BNSF",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Green"
+        },
+        {
+            "number": 318005,
+            "road": "CP",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 318088,
+            "road": "CP",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 70061,
+            "road": "TCAX",
+            "aar": "FCB",
+            "description": "Center Beam",
+            "length": 62,
+
+            "color": "Gray"
+        },
+        {
+            "number": 317128,
+            "road": "CP",
+            "aar": "FB",
+            "description": "FlatBulkHead",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 317137,
+            "road": "CP",
+            "aar": "FB",
+            "description": "FlatBulkHead",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 317642,
+            "road": "CP",
+            "aar": "FB",
+            "description": "FlatBulkHead",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 317438,
+            "road": "CP",
+            "aar": "FB",
+            "description": "FlatBulkHead",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 459003,
+            "road": "GSVR",
+            "aar": "FB",
+            "description": "FlatBulkHead",
+            "length": 62,
+
+            "color": "Red"
+        },
+        {
+            "number": 79104,
+            "road": "ACL",
+            "aar": "FD",
+            "description": "Flatcar-Dep",
+            "length": 60,
+
+            "color": "Black"
+        },
+        {
+            "number": 504485,
+            "road": "CP",
+            "aar": "FT",
+            "description": "FlatTrailer",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 569449,
+            "road": "BN",
+            "aar": "GN",
+            "description": "Gondola",
+            "length": 54,
+
+            "color": "Green"
+        },
+        {
+            "number": 9077,
+            "road": "BCOL",
+            "aar": "GN",
+            "description": "Gondola",
+            "length": 54,
+
+            "color": "Green"
+        },
+        {
+            "number": 9150,
+            "road": "BCOL",
+            "aar": "GN",
+            "description": "Gondola",
+            "length": 54,
+
+            "color": "Green"
+        },
+        {
+            "number": 72839,
+            "road": "GN",
+            "aar": "GN",
+            "description": "Gondola",
+            "length": 54,
+
+            "color": "Red"
+        },
+        {
+            "number": 5465,
+            "road": "BCOL",
+            "aar": "GN",
+            "description": "Gondola",
+            "length": 32,
+
+            "color": "Green"
+        },
+        {
+            "number": 406680,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 406685,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 406692,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 406696,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 407451,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 407463,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 407472,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 407489,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 407495,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 407484,
+            "road": "BNSF",
+            "aar": "HM",
+            "description": "Hop2Bay",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 315060,
+            "road": "GTW",
+            "aar": "HM",
+            "description": "HopCmnt",
+            "length": 52,
+
+            "color": "Blue"
+        },
+        {
+            "number": 5,
+            "road": "BCAX",
+            "aar": "HM",
+            "description": "HopCmnt",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 667992,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668446,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668463,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668476,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668613,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668729,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668752,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668763,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668524,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 668595,
+            "road": "BNSF",
+            "aar": "GHC",
+            "description": "HopCoal",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 1000,
+            "road": "PCC",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1001,
+            "road": "CBRW",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1002,
+            "road": "BLMR",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1004,
+            "road": "BLMR",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1005,
+            "road": "BLMR",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1007,
+            "road": "BLMR",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1009,
+            "road": "CBRW",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 1018,
+            "road": "BLMR",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 2011,
+            "road": "PCC",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 51110,
+            "road": "ACFX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 51134,
+            "road": "ACFX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 51491,
+            "road": "ACFX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 70047,
+            "road": "SOO",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 70056,
+            "road": "SOO",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 70059,
+            "road": "SOO",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 100251,
+            "road": "CNWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 100268,
+            "road": "CNWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 100456,
+            "road": "CNWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 109952,
+            "road": "CNWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 110065,
+            "road": "CNWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 382737,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 384978,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 385193,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 385321,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 385468,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 388954,
+            "road": "CP",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Gray"
+        },
+        {
+            "number": 396012,
+            "road": "ALNX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 396033,
+            "road": "ALNX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 397425,
+            "road": "SKPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 459540,
+            "road": "BN",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 459608,
+            "road": "BN",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 459637,
+            "road": "BN",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 459828,
+            "road": "BN",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 600205,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 602128,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 602285,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 606333,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 606420,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 606525,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 606617,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 606704,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 606818,
+            "road": "CPWX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 625385,
+            "road": "SKPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Orange"
+        },
+        {
+            "number": 628004,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628036,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628204,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628257,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628315,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628468,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628513,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628122,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 628172,
+            "road": "ALPX",
+            "aar": "HTC",
+            "description": "HopGrain",
+            "length": 60,
+
+            "color": "Blue"
+        },
+        {
+            "number": 50070,
+            "road": "ADMX",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 101073,
+            "road": "SOO",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 119145,
+            "road": "SOO",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 420001,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 420123,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 422265,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 422297,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 422323,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 424964,
+            "road": "BNSF",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Brown"
+        },
+        {
+            "number": 458585,
+            "road": "BN",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 458633,
+            "road": "BN",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 458659,
+            "road": "BN",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 458710,
+            "road": "BN",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "Green"
+        },
+        {
+            "number": 50051,
+            "road": "ADMX",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 101067,
+            "road": "SOO",
+            "aar": "HT",
+            "description": "Hopper",
+            "length": 52,
+
+            "color": "White"
+        },
+        {
+            "number": 1254,
+            "road": "HCPX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "Orange"
+        },
+        {
+            "number": 29866,
+            "road": "ADMX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "Black"
+        },
+        {
+            "number": 86471,
+            "road": "ACFX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 240300,
+            "road": "SHPX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "Black"
+        },
+        {
+            "number": 875000,
+            "road": "BN",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 60,
+
+            "color": "Black"
+        },
+        {
+            "number": 17040,
+            "road": "SHPX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "White"
+        },
+        {
+            "number": 19421,
+            "road": "ACFX",
+            "aar": "TC",
+            "description": "Tank Gas",
+            "length": 50,
+
+            "color": "Black"
+        },
+        {
+            "number": 1410,
+            "road": "PLYX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 1650,
+            "road": "PLYX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 3014,
+            "road": "MD&W",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 3054,
+            "road": "MD&W",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "White"
+        },
+        {
+            "number": 4471,
+            "road": "LUNX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 4473,
+            "road": "LUNX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 4474,
+            "road": "LUNX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 4476,
+            "road": "LUNX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 4479,
+            "road": "LUNX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 4564,
+            "road": "CFPX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 4573,
+            "road": "CFPX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Red"
+        },
+        {
+            "number": 20075,
+            "road": "TCAX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 20199,
+            "road": "TCAX",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Yellow"
+        },
+        {
+            "number": 800100,
+            "road": "BCIT",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 800116,
+            "road": "BCIT",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 800119,
+            "road": "BCIT",
+            "aar": "XPT",
+            "description": "Thrall Box",
+            "length": 60,
+
+            "color": "Green"
+        },
+        {
+            "number": 10022,
+            "road": "GPMX",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Blue"
+        },
+        {
+            "number": 10035,
+            "road": "GPMX",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Blue"
+        },
+        {
+            "number": 10040,
+            "road": "GPMX",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Blue"
+        },
+        {
+            "number": 541310,
+            "road": "BNSF",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+            "color": "Green"
+        },
+        {
+            "number": 541331,
+            "road": "BNSF",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Green"
+        },
+        {
+            "number": 541427,
+            "road": "BNSF",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Brown"
+        },
+        {
+            "number": 10008,
+            "road": "GPMX",
+            "aar": "GTS",
+            "description": "WoodChip Gon",
+            "length": 32,
+
+            "color": "Blue"
         }
     ]
 );
