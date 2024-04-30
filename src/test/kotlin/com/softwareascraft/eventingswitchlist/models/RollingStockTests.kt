@@ -13,7 +13,7 @@ class RollingStockTests {
     fun `creates boxcar`() {
         val rollingStock = Boxcar("BNSF", 1234)
         assertThat(rollingStock.roadMarkings).isEqualTo("BNSF 1234")
-        assertThat(rollingStock.isAarType(CarType.Boxcar)).isTrue()
+        assertThat(rollingStock.isAarType("XM")).isTrue()
     }
 
     @Test

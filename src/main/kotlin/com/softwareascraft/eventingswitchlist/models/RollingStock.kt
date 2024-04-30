@@ -2,7 +2,7 @@ package com.softwareascraft.eventingswitchlist.models
 
 interface FreightCar {
     val roadMarkings: String
-    fun isAarType(expectedType: CarType): Boolean
+    fun isAarType(expectedType: String): Boolean
 }
 
 interface CarriesLoad {
@@ -10,20 +10,24 @@ interface CarriesLoad {
     fun isLoaded(): Boolean
 }
 
-abstract class RollingStock(private val roadName: String, private val roadNumber: Int, private val carType: CarType) :
+abstract class RollingStock(
+    private val roadName: String,
+    private val roadNumber: Int,
+    private val carType2: String = ""
+) :
     FreightCar {
 
     override val roadMarkings: String
         get() = "$roadName $roadNumber"
 
-    override fun isAarType(expectedType: CarType): Boolean {
-        return this.carType == expectedType
+    override fun isAarType(expectedType: String): Boolean {
+        return this.carType2 == expectedType
     }
 
 }
 
 class Boxcar(roadName: String, roadNumber: Int) : CarriesLoad,
-    RollingStock(roadName, roadNumber, CarType.Boxcar) {
+    RollingStock(roadName, roadNumber, "XM") {
     private var loaded: Boolean = false
 
     override fun load() {
