@@ -28,8 +28,9 @@ class RollingStockTests {
     fun `implements LayoutObject`() {
         val boxcarId = ObjectId()
         val rollingStock: LayoutObject<RollingStockDto> = Boxcar(boxcarId,"BNSF", 1234)
-        assertThat(rollingStock.Id()).isEqualTo(boxcarId.toString())
-
+        val rollingStockDto = RollingStockDto(boxcarId,"BNSF", 1234, "XM", "BNSF 1234", 0, "")
+        assertThat(rollingStock.id()).isEqualTo(boxcarId.toString())
+        assertThat(rollingStock.toDto()).isEqualTo(rollingStockDto)
     }
 
 }

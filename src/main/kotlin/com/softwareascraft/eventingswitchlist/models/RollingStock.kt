@@ -27,12 +27,12 @@ abstract class RollingStock(
         return this.carType == expectedType
     }
 
-    override fun Id(): String {
+    override fun id(): String {
         return this.id.toString()
     }
 
     override fun toDto(): RollingStockDto {
-        TODO("Not yet implemented")
+        return RollingStockDto(this.id, this.roadName, this.roadNumber, this.carType, "$roadName $roadNumber", 0, "")
     }
 }
 
