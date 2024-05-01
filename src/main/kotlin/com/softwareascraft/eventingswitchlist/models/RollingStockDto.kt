@@ -10,4 +10,4 @@ data class RollingStockDto(
     val description: String,
     val length: Int,
     val color: String
-) : LayoutObject()
+) : LayoutDto()
