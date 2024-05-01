@@ -1,7 +1,5 @@
 package com.softwareascraft.eventingswitchlist.status
 
-import com.softwareascraft.eventingswitchlist.data.FakeRepository
-import com.softwareascraft.eventingswitchlist.models.RollingStockDto
 import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
@@ -13,8 +11,7 @@ class CarStatusControllerTests {
     @Test
     fun `creates CarStatusController`() {
         val messageSender = FakeMessageSender()
-        val fakeRepository = FakeRepository<RollingStockDto>()
-        val controller = CarStatusController(messageSender, fakeRepository)
+        val controller = CarStatusController(messageSender)
         val expectedStatus = CarStatus.EMPTY
         val carId = "12345"
         val rollingStockStatus: ResponseEntity<RollingStockStatus> = controller.getRollingStockStatus(carId)

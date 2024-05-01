@@ -14,8 +14,7 @@ abstract class RollingStock(
     private val roadName: String,
     private val roadNumber: Int,
     private val carType: String = ""
-) :
-    FreightCar {
+) : FreightCar {
 
     override val roadMarkings: String
         get() = "$roadName $roadNumber"
