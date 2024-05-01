@@ -15,7 +15,7 @@ class RollingStockTests {
 
     @Test
     fun `creates boxcar`() {
-        val rollingStock = FreightCar("BNSF", 1234)
+        val rollingStock: RailCar = FreightCar("BNSF", 1234)
         assertThat(rollingStock.roadMarkings).isEqualTo("BNSF 1234")
         assertThat(rollingStock.isAarType("XM")).isTrue()
     }
