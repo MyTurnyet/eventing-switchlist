@@ -7,11 +7,11 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document("rolling_stock")
 data class RollingStockDto(
     @Id
-    val id: ObjectId = ObjectId(),
+    override val id: ObjectId = ObjectId(),
     val road: String,
     val number: Int,
     val aar: String,
     val description: String,
     val length: Int,
     val color: String
-)
+) : LayoutObject
