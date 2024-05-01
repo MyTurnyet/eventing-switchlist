@@ -2,7 +2,7 @@ package com.softwareascraft.eventingswitchlist.models
 
 import org.bson.types.ObjectId
 
-interface FreightCar {
+interface RailCar {
     val roadMarkings: String
     fun isAarType(expectedType: String): Boolean
 }
@@ -17,7 +17,7 @@ abstract class RollingStock(
     private val roadName: String,
     private val roadNumber: Int,
     private val carType: String = ""
-) : FreightCar, LayoutObject<RollingStockDto> {
+) : RailCar, LayoutObject<RollingStockDto> {
 
 
     override val roadMarkings: String
@@ -36,9 +36,9 @@ abstract class RollingStock(
     }
 }
 
-class Boxcar(id: ObjectId, roadName: String, roadNumber: Int) : CarriesLoad,
-    RollingStock(id, roadName, roadNumber, "XM") {
-    constructor(roadName: String, roadNumber: Int) : this(ObjectId(), roadName, roadNumber)
+class FreightCar(id: ObjectId, carType: String, roadName: String, roadNumber: Int) : CarriesLoad,
+    RollingStock(id, roadName, roadNumber, carType) {
+    constructor(roadName: String, roadNumber: Int) : this(ObjectId(), "XM", roadName, roadNumber)
 
     private var loaded: Boolean = false
 
@@ -48,6 +48,12 @@ class Boxcar(id: ObjectId, roadName: String, roadNumber: Int) : CarriesLoad,
 
     override fun isLoaded(): Boolean {
         return this.loaded
+    }
+
+    companion object {
+        fun fromDto(rollingStockDto: RollingStockDto): FreightCar {
+            return FreightCar(rollingStockDto.id, rollingStockDto.aar, rollingStockDto.road, rollingStockDto.number)
+        }
     }
 
 
