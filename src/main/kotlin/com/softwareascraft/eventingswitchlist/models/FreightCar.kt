@@ -4,7 +4,7 @@ import org.bson.types.ObjectId
 
 class FreightCar(id: ObjectId, carType: String, roadName: String, roadNumber: Int) : CarriesLoad,
     RollingStock(id, roadName, roadNumber, carType) {
-    constructor(roadName: String, roadNumber: Int) : this(ObjectId(), "XM", roadName, roadNumber)
+    constructor(carType: String, roadName: String, roadNumber: Int) : this(ObjectId(), carType, roadName, roadNumber)
 
     private var loaded: Boolean = false
 
@@ -20,7 +20,15 @@ class FreightCar(id: ObjectId, carType: String, roadName: String, roadNumber: In
         fun fromDto(rollingStockDto: RollingStockDto): FreightCar {
             return FreightCar(rollingStockDto.id, rollingStockDto.aar, rollingStockDto.road, rollingStockDto.number)
         }
+
+        fun empty(): FreightCar {
+            return FreightCar("", "", 0)
+        }
     }
 
 
+}
+
+fun FreightCar.isEmpty(): Boolean {
+    return this.isAarType("")
 }

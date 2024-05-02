@@ -15,14 +15,14 @@ class FreightCarTests {
 
     @Test
     fun `creates boxcar`() {
-        val rollingStock: RailCar = FreightCar("BNSF", 1234)
+        val rollingStock: RailCar = FreightCar("XM", "BNSF", 1234)
         assertThat(rollingStock.roadMarkings).isEqualTo("BNSF 1234")
         assertThat(rollingStock.isAarType("XM")).isTrue()
     }
 
     @Test
     fun `implements CarriesLoad`() {
-        val rollingStock: CarriesLoad = FreightCar("BNSF", 1234)
+        val rollingStock: CarriesLoad = FreightCar("XM", "BNSF", 1234)
         assertThat(rollingStock.isLoaded()).isFalse()
         rollingStock.load()
         assertThat(rollingStock.isLoaded()).isTrue()
@@ -43,5 +43,13 @@ class FreightCarTests {
         assertThat(freightCar.isAarType("XM")).isTrue()
     }
 
+    @Test
+    fun `freight car has an empty object`() {
+        val empty = FreightCar.empty()
+        assertThat(empty.isEmpty()).isTrue()
+
+    }
+
 }
+
 
