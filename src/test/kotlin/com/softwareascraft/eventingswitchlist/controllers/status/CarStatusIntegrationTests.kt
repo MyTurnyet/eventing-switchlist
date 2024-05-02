@@ -1,5 +1,7 @@
-package com.softwareascraft.eventingswitchlist.status
+package com.softwareascraft.eventingswitchlist.controllers.status
 
+import com.softwareascraft.eventingswitchlist.controllers.status.CarStatus
+import com.softwareascraft.eventingswitchlist.controllers.status.RollingStockStatus
 import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Tag
