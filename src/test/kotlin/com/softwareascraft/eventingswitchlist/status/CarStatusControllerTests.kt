@@ -1,5 +1,6 @@
 package com.softwareascraft.eventingswitchlist.status
 
+import com.softwareascraft.eventingswitchlist.data.FakeFreightCarRepository
 import com.softwareascraft.eventingswitchlist.senders.MessageSender
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Tag
