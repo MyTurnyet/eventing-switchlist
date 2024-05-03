@@ -2,6 +2,7 @@ package com.softwareascraft.eventingswitchlist.controllers.layout
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import assertk.assertions.isNotEmpty
 import com.softwareascraft.eventingswitchlist.data.FakeFreightCarRepository
 import com.softwareascraft.eventingswitchlist.models.FreightCar
 import com.softwareascraft.eventingswitchlist.models.RollingStockDto
@@ -28,5 +29,21 @@ class FreightCarInventoryControllerTests {
         assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
         assertThat(freightCar.roadMarkings).isEqualTo(rollingStockDto.description)
         assertThat(freightCar.id()).isEqualTo(id.toString())
+    }
+
+    @Test
+    fun `get all freight cars in repository`() {
+        val rollingStockDto1 = RollingStockDto(ObjectId(), "CPR", 9876, "XM", "CPR 9876", 50, "RED")
+        val rollingStockDto2 = RollingStockDto(ObjectId(), "CPR", 9876, "XM", "CPR 9876", 50, "RED")
+
+        val repository = FakeFreightCarRepository()
+        repository.carsToReturn(listOf(rollingStockDto1, rollingStockDto2))
+        val controller = FreightCarInventoryController(repository)
+
+        val responseEntity: ResponseEntity<List<FreightCar>> = controller.getAll()
+        val freightCars = responseEntity.body!!
+        assertThat(freightCars).isNotEmpty()
+        assertThat(freightCars.size).isEqualTo(2)
+
     }
 }

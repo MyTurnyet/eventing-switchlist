@@ -9,4 +9,9 @@ class FreightCarInventoryController(val repository: FreightCarRepository) {
         val freightCar = repository.findById(freightCarId)
         return ResponseEntity.ok(freightCar)
     }
+
+    fun getAll(): ResponseEntity<List<FreightCar>> {
+        val freightCarList = repository.getAll()
+        return ResponseEntity.ok(freightCarList)
+    }
 }

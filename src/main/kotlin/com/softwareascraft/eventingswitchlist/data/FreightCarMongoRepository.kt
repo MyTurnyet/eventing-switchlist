@@ -13,4 +13,8 @@ class FreightCarMongoRepository(val repository: FreightCarMongoInterface) : Frei
         val rollingStockDto: RollingStockDto = repository.findById(freightCarId).orElse(FreightCar.empty().toDto())
         return FreightCar.fromDto(rollingStockDto)
     }
+
+    override fun getAll(): List<FreightCar> {
+        TODO("Not yet implemented")
+    }
 }
