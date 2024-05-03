@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity
 @Tag("unit")
 class FreightCarInventoryControllerTests {
     @Test
-    fun `creates FreightCarInventoryController`() {
+    fun `creates gets car by Id`() {
         val id = ObjectId()
         val rollingStockDto = RollingStockDto(id, "CPR", 9876, "XM", "CPR 9876", 50, "RED")
 
@@ -27,6 +27,6 @@ class FreightCarInventoryControllerTests {
         val freightCar = responseEntity.body!!
         assertThat(responseEntity.statusCode).isEqualTo(HttpStatus.OK)
         assertThat(freightCar.roadMarkings).isEqualTo(rollingStockDto.description)
-        assertThat(freightCar.id().toString()).isEqualTo(id.toString())
+        assertThat(freightCar.id()).isEqualTo(id.toString())
     }
 }
