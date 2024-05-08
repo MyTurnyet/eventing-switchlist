@@ -2,7 +2,9 @@ package com.softwareascraft.eventingswitchlist.models
 
 import org.bson.types.ObjectId
 
-class Industry(private val id: ObjectId, private val industryName: String): LayoutObject<IndustryDto> {
+class Industry(private val id: ObjectId, private val industryName: String, private val maximumCars:Int): LayoutObject<IndustryDto> {
+    private val freightCarsAtIndustry: MutableList<FreightCar> = mutableListOf()
+
     override fun id(): String {
         return this.id.toString()
     }
@@ -13,6 +15,14 @@ class Industry(private val id: ObjectId, private val industryName: String): Layo
 
     fun name(): String {
         return this.industryName
+    }
+
+    fun isEmpty(): Boolean {
+        return this.freightCarsAtIndustry.isEmpty()
+    }
+
+    fun place(freightCar: FreightCar) {
+        this.freightCarsAtIndustry.add(freightCar)
     }
 
 }
