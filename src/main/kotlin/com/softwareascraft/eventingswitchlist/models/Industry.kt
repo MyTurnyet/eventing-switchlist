@@ -24,7 +24,7 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
     }
 
     fun needsCar(freightCar: FreightCar): Boolean {
-        return isEmpty() && !isFull()
+        return isEmpty() || !isFull()
     }
 
     private fun isEmpty(): Boolean {
@@ -35,7 +35,13 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
 
     companion object {
         fun nullObject(): Industry {
-            return Industry(ObjectId(),"",0)
+            return Industry(ObjectId(), "", 0)
+        }
+
+        fun fromDto(industryDto: IndustryDto): Industry {
+            val industry = Industry(industryDto.id, industryDto.industryName, industryDto.maximumCars)
+            industryDto.stockDtoList.forEach { rollingStockDto -> industry.place(FreightCar.fromDto(rollingStockDto)) }
+            return industry
         }
     }
 
