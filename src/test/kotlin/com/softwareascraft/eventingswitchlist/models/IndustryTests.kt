@@ -12,11 +12,15 @@ import org.junit.jupiter.api.Test
 @Tag("unit")
 class IndustryTests {
     private val id = ObjectId()
+    private val boxcarId = ObjectId()
+    private val rollingStockDto = RollingStockDto(boxcarId, "BNSF", 1234, "XM", "BNSF 1234", 0, "")
     private lateinit var industry: Industry
+    private lateinit var freightCar: FreightCar
     private val industryName = "Malt Bee Brewery"
 
     @BeforeEach
     fun setup() {
+        freightCar = FreightCar.fromDto(rollingStockDto)
         industry = Industry(id, industryName, 1)
     }
 
@@ -30,16 +34,15 @@ class IndustryTests {
     fun `creates empty industry`() {
         assertThat(industry.name()).isEqualTo(industryName)
         assertThat(industry.isEmpty()).isTrue()
+        assertThat(industry.needsCar(freightCar)).isTrue()
     }
 
     @Test
     fun `places freight car at industry`() {
-        val boxcarId = ObjectId()
-        val rollingStockDto = RollingStockDto(boxcarId, "BNSF", 1234, "XM", "BNSF 1234", 0, "")
-        val freightCar = FreightCar.fromDto(rollingStockDto)
 
         industry.place(freightCar)
 
         assertThat(industry.isEmpty()).isFalse()
+        assertThat(industry.needsCar(freightCar)).isFalse()
     }
 }
