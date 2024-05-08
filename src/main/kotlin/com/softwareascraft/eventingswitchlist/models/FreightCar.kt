@@ -29,6 +29,6 @@ class FreightCar(id: ObjectId, carType: String, roadName: String, roadNumber: In
 
 }
 
-fun FreightCar.isEmpty(): Boolean {
+fun FreightCar.isNull(): Boolean {
     return this.isAarType("")
 }

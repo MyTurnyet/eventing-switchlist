@@ -46,7 +46,7 @@ class FreightCarTests {
     @Test
     fun `freight car has an empty object`() {
         val empty = FreightCar.empty()
-        assertThat(empty.isEmpty()).isTrue()
+        assertThat(empty.isNull()).isTrue()
         assertThat(empty.isAarType("")).isTrue()
     }
 
