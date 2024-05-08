@@ -10,7 +10,7 @@ interface FreightCarMongoInterface : MongoRepository<RollingStockDto, String>
 @Repository
 class FreightCarMongoRepository(val repository: FreightCarMongoInterface) : FreightCarRepository {
     override fun findById(freightCarId: String): FreightCar {
-        val rollingStockDto: RollingStockDto = repository.findById(freightCarId).orElse(FreightCar.empty().toDto())
+        val rollingStockDto: RollingStockDto = repository.findById(freightCarId).orElse(FreightCar.nullObject().toDto())
         return FreightCar.fromDto(rollingStockDto)
     }
 

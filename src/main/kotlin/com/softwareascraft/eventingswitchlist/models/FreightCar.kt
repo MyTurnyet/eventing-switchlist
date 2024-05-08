@@ -21,7 +21,7 @@ class FreightCar(id: ObjectId, carType: String, roadName: String, roadNumber: In
             return FreightCar(rollingStockDto.id, rollingStockDto.aar, rollingStockDto.road, rollingStockDto.number)
         }
 
-        fun empty(): FreightCar {
+        fun nullObject(): FreightCar {
             return FreightCar("", "", 0)
         }
     }
