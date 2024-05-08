@@ -33,16 +33,12 @@ class IndustryTests {
     @Test
     fun `creates empty industry`() {
         assertThat(industry.name()).isEqualTo(industryName)
-        assertThat(industry.isEmpty()).isTrue()
         assertThat(industry.needsCar(freightCar)).isTrue()
     }
 
     @Test
     fun `places freight car at industry`() {
-
         industry.place(freightCar)
-
-        assertThat(industry.isEmpty()).isFalse()
         assertThat(industry.needsCar(freightCar)).isFalse()
     }
 }

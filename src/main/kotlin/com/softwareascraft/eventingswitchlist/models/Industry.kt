@@ -18,7 +18,7 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
         return this.industryName
     }
 
-    fun isEmpty(): Boolean {
+    private fun isEmpty(): Boolean {
         return this.freightCarsAtIndustry.isEmpty()
     }
 
@@ -32,6 +32,5 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
 
 }
 
-data class IndustryDto(val id: ObjectId, val industryName: String) : LayoutDto {
+data class IndustryDto(val id: ObjectId, val industryName: String) : LayoutDto
 
-}
