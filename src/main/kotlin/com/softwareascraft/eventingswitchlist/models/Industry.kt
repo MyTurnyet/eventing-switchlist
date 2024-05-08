@@ -11,15 +11,12 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
     }
 
     override fun toDto(): IndustryDto {
-        return IndustryDto(id, industryName)
+        val stockDtoList = this.freightCarsAtIndustry.map { it.toDto() }
+        return IndustryDto(id, industryName, maximumCars, stockDtoList)
     }
 
     fun name(): String {
         return this.industryName
-    }
-
-    private fun isEmpty(): Boolean {
-        return this.freightCarsAtIndustry.isEmpty()
     }
 
     fun place(freightCar: FreightCar) {
@@ -30,9 +27,18 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
         return isEmpty() && !isFull()
     }
 
+    private fun isEmpty(): Boolean {
+        return this.freightCarsAtIndustry.isEmpty()
+    }
+
     private fun isFull() = this.maximumCars <= this.freightCarsAtIndustry.size
 
 }
 
-data class IndustryDto(val id: ObjectId, val industryName: String) : LayoutDto
+data class IndustryDto(
+    val id: ObjectId,
+    val industryName: String,
+    val maximumCars: Int,
+    val stockDtoList: List<RollingStockDto>
+) : LayoutDto
 

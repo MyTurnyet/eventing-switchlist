@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test
 class IndustryTests {
     private val id = ObjectId()
     private val boxcarId = ObjectId()
+    private val maximumCars = 1
     private val rollingStockDto = RollingStockDto(boxcarId, "BNSF", 1234, "XM", "BNSF 1234", 0, "")
     private lateinit var industry: Industry
     private lateinit var freightCar: FreightCar
@@ -21,13 +22,14 @@ class IndustryTests {
     @BeforeEach
     fun setup() {
         freightCar = FreightCar.fromDto(rollingStockDto)
-        industry = Industry(id, industryName, 1)
+        industry = Industry(id, industryName, maximumCars)
     }
 
     @Test
     fun `implements LayoutObject`() {
         assertThat(industry.id()).isEqualTo(id.toString())
-        assertThat(industry.toDto()).isEqualTo(IndustryDto(id, industryName))
+        val stockDtoList = listOf(freightCar.toDto())
+        assertThat(industry.toDto()).isEqualTo(IndustryDto(id, industryName,maximumCars, stockDtoList))
     }
 
     @Test
