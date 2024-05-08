@@ -27,8 +27,10 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
     }
 
     fun needsCar(freightCar: FreightCar): Boolean {
-        return this.freightCarsAtIndustry.isEmpty() && this.maximumCars > this.freightCarsAtIndustry.size
+        return isEmpty() && !isFull()
     }
+
+    private fun isFull() = this.maximumCars <= this.freightCarsAtIndustry.size
 
 }
 
