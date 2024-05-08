@@ -33,7 +33,18 @@ class Industry(private val id: ObjectId, private val industryName: String, priva
 
     private fun isFull() = this.maximumCars <= this.freightCarsAtIndustry.size
 
+    companion object {
+        fun nullObject(): Industry {
+            return Industry(ObjectId(),"",0)
+        }
+    }
+
 }
+
+fun Industry.isNull(): Boolean {
+    return this.name() == ""
+}
+
 
 data class IndustryDto(
     val id: ObjectId,

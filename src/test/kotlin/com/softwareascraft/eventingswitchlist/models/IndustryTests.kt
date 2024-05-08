@@ -28,7 +28,7 @@ class IndustryTests {
     @Test
     fun `implements LayoutObject`() {
         assertThat(industry.id()).isEqualTo(id.toString())
-        val stockDtoList = listOf(freightCar.toDto())
+        val stockDtoList: List<RollingStockDto> = listOf()
         assertThat(industry.toDto()).isEqualTo(IndustryDto(id, industryName,maximumCars, stockDtoList))
     }
 
@@ -43,4 +43,11 @@ class IndustryTests {
         industry.place(freightCar)
         assertThat(industry.needsCar(freightCar)).isFalse()
     }
+
+    @Test
+    fun `industry creates empty object`() {
+        val empty = Industry.nullObject()
+        assertThat( empty.isNull()).isTrue()
+    }
 }
+
