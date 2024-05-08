@@ -28,6 +28,7 @@ class IndustryTests {
     @Test
     fun `implements LayoutObject`() {
         assertThat(industry.id()).isEqualTo(id.toString())
+        assertThat(industry.name()).isEqualTo(industryName)
         val stockDtoList: List<RollingStockDto> = listOf()
         assertThat(industry.toDto()).isEqualTo(IndustryDto(id, industryName, maximumCars, stockDtoList))
     }
