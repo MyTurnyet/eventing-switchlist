@@ -46,10 +46,3 @@ fun Industry.isNull(): Boolean {
 }
 
 
-data class IndustryDto(
-    val id: ObjectId,
-    val industryName: String,
-    val maximumCars: Int,
-    val stockDtoList: List<RollingStockDto>
-) : LayoutDto
-
