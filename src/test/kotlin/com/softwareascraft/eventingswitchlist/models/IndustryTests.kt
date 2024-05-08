@@ -46,7 +46,7 @@ class IndustryTests {
     }
 
     @Test
-    fun `industry creates empty object`() {
+    fun `industry creates null object`() {
         val empty = Industry.nullObject()
         assertThat(empty.isNull()).isTrue()
     }
