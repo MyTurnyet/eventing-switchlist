@@ -34,6 +34,13 @@ class IndustryTests {
     }
 
     @Test
+    fun `implements LayoutObject with one freight car`() {
+        industry.place(freightCar)
+        val stockDtoList: List<RollingStockDto> = listOf(freightCar.toDto())
+        assertThat(industry.toDto()).isEqualTo(IndustryDto(id, industryName, maximumCars, stockDtoList))
+    }
+
+    @Test
     fun `creates empty industry`() {
         assertThat(industry.name()).isEqualTo(industryName)
         assertThat(industry.needsCar(freightCar)).isTrue()
