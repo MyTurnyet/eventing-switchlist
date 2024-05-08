@@ -2,7 +2,11 @@ package com.softwareascraft.eventingswitchlist.models
 
 import org.bson.types.ObjectId
 
-class Station(private val id: ObjectId, private val stationName: String) : LayoutObject<StationDto> {
+class Station(
+    private val id: ObjectId,
+    private val stationName: String,
+    private val industriesAtStationList: List<Industry>
+) : LayoutObject<StationDto> {
     override fun id(): String {
         return this.id.toString()
     }
@@ -12,16 +16,18 @@ class Station(private val id: ObjectId, private val stationName: String) : Layou
     }
 
     override fun toDto(): StationDto {
-        return StationDto(this.id, this.stationName)
+        val industryDtoList = this.industriesAtStationList.map { industry -> industry.toDto() }
+        return StationDto(this.id, this.stationName, industryDtoList)
     }
 
     companion object {
         fun nullObject(): Station {
-            return Station(ObjectId(), "")
+            return Station(ObjectId(), "", listOf())
         }
     }
 
 }
+
 fun Station.isNull(): Boolean {
-    return this.name() ==""
+    return this.name() == ""
 }

@@ -12,10 +12,13 @@ class StationTests {
 
     @Test
     fun `implements LayoutObject`() {
-        val station = Station(id, stationName)
+        val industriesAtStationList: List<Industry> = listOf()
+        val station = Station(id, stationName, industriesAtStationList)
         assertThat(station.id()).isEqualTo(id.toString())
         assertThat(station.name()).isEqualTo(stationName)
-        assertThat(station.toDto()).isEqualTo(StationDto(id, stationName))
+
+        val industryDtoList: List<IndustryDto> = listOf()
+        assertThat(station.toDto()).isEqualTo(StationDto(id, stationName, industryDtoList))
     }
 
     @Test
